@@ -13,6 +13,9 @@ Geks fore
 
 internal class Program
     {
+        private const int DotIndex = 27;
+        private const int SpaceIndex = 26;
+    
         static public void Main()
         {
             string s = GetStringWithAlternateOccurancesOfCharacters("Geeks for geeks");
@@ -44,8 +47,6 @@ internal class Program
 
         private static int GetIndex(char c)
         {
-            const int DotIndex = 27;
-            const int SpaceIndex = 26;
             if (c == '.')
                 return DotIndex;
             else if (c == ' ')
