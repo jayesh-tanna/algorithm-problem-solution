@@ -1,6 +1,6 @@
 /*
 Given a string, check if it is a palindrome by ignoring spaces. E.g. race car would be a palindrome.
-https://practice.geeksforgeeks.org/problems/string-palindromic-ignoring-spaces/0Check if palindromic ignoring spaces
+https://practice.geeksforgeeks.org/problems/string-palindromic-ignoring-spaces/0
 */
 
 using System;
