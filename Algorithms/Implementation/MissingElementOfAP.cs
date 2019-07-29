@@ -11,8 +11,8 @@ public class GFG {
 		while(t-- > 0){
 		    int n = Convert.ToInt32(Console.ReadLine());
 		    var items = Array.ConvertAll(Console.ReadLine().Split(' ').Where(x => x!=string.Empty).ToArray(),x=>Convert.ToInt32(x));
-		    int count = MissingElement(items,n);
-		    Console.WriteLine(count);
+		    int missedElement = MissingElement(items,n);
+		    Console.WriteLine(missedElement);
 		}
 	}
 	
