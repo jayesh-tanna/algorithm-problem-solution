@@ -41,4 +41,12 @@ public class GFG {
 	  var array = sb.ToString().OrderBy(x => x).ToArray();
 	  return  new string(array) + sum;
 	}
+	
+	//Linq solution
+	private static string ReArrangeStringUsingLinq(string s)
+	{
+	  string str = new string(s.Where(x => char.IsLetter(x)).OrderBy(x => x).ToArray());
+          int sum = s.Where(x => char.IsDigit(x)).Select(x => Convert.ToInt32(char.GetNumericValue(x))).Sum();
+            return str + sum;
+	}
 }
