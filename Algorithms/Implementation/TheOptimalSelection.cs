@@ -64,4 +64,14 @@ public class GFG {
 	    }
 	    return sum;
 	}
+	
+	//Using Linq
+	private static int GetOptimalSolution1(int[] arr, int n)
+        {
+            Array.Sort(arr);
+            
+            int sum = arr.Select((x, i) => x * i).Sum();
+
+            return sum;
+        }
 }
