@@ -9,5 +9,5 @@ public static int sumOfLeafNodes(Node root)
         return 0;
     if(root.left == null && root.right == null)
         return root.data;
-    return GetSum(root.left) + GetSum(root.right);
+    return sumOfLeafNodes(root.left) + sumOfLeafNodes(root.right);
 }
