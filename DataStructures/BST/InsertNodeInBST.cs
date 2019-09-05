@@ -14,3 +14,39 @@ Node insert(Node root, int data)
              root.right = insert(root.right,data);
          return root;
     }
+
+
+Node insert(Node root, int data)
+    {
+        if(root == null){
+            root= new Node(data);
+            return root;
+        }
+        Node current = root;
+        while(current != null){
+            if(data < current.data)
+            {
+                if(current.left == null)
+                {
+                    current.left = new Node(data);
+                    break;
+                }
+                else{
+                    current = current.left;
+                }
+            }
+            else if(data > current.data)
+            {
+                if(current.right == null)
+                {
+                    current.right = new Node(data);
+                    break;
+                }
+                else
+                    current = current.right;
+            }
+            else
+                break;
+        }
+        return root;
+    }
