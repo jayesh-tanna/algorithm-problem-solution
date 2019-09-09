@@ -20,3 +20,32 @@ public static int isSumProperty(Node node)
         
         return (l == 1 && r == 1 && node.data == lSum + rSum) ? 1 : 0;
     }
+
+public static int isSumProperty(Node node)
+    {
+        if(node == null)
+            return 1;
+        Queue<Node> q = new LinkedList<>();
+        q.add(node);
+        while(q.size() > 0)
+        {
+            int n = q.size();
+            for(int i=0;i<n;i++)
+            {
+                int sum = 0;
+                Node temp = q.remove();
+                if(temp.left != null){
+                    sum = temp.left.data;
+                    q.add(temp.left);
+                }
+                if(temp.right != null){
+                    sum += temp.right.data;
+                    q.add(temp.right);
+                }
+                if(sum != 0 && sum != temp.data)
+                    return 0;
+                
+            }
+        }
+        return 1;
+    }
