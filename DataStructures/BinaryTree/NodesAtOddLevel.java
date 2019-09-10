@@ -33,33 +33,4 @@ public void nodeAtOdd(Node root)
          }
      }
 
-public int leftLeafSum(Node root)
-    {
-        if(root == null)
-            return 0;
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
-        int sum = 0;
-        while(q.size() > 0)
-        {
-            int n = q.size();
-            for(int i=0;i<n;i++)
-            {
-                Node t = q.remove();
-                if(t.left != null)
-                {
-                    if(t.left.left == null && t.left.right == null)
-                    {
-                        sum += t.left.data;    
-                    }
-                    else
-                    {
-                        q.add(t.left);
-                    }
-                }
-                if(t.right != null)
-                    q.add(t.right);
-            }
-        }
-        return sum;
-    }
+
