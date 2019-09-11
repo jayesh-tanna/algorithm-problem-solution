@@ -1,0 +1,28 @@
+/*
+https://practice.geeksforgeeks.org/problems/tilt-of-binary-tree/1
+Given a binary tree of size N+1, your task is to complete the function tiltTree(), that return the tilt of the whole tree. 
+The tilt of a tree node is defined as the absolute difference between the sum of all left subtree node values and the sum of all 
+right subtree node values. 
+Null nodes are assigned tilt to be zero. Therefore, tilt of the whole tree is defined as the sum of all nodes’ tilt.
+*/
+
+class TreeSum
+{
+    int sum = 0;
+}
+class GfG{
+    public int tilt(Node root){
+        TreeSum treeSum = new TreeSum();
+        tiltSum(root,treeSum);
+        return treeSum.sum;
+    }
+    public int tiltSum(Node root,TreeSum treeSum)
+    {
+        if(root == null)
+            return 0;
+        int left = tiltSum(root.left,treeSum);
+        int right = tiltSum(root.right,treeSum);
+        treeSum.sum += Math.abs(left - right);  
+        return left + right + root.data;  //Sub of whole subtree
+    }
+}
