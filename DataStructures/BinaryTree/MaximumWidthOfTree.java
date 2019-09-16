@@ -18,10 +18,10 @@ class Tree
     // /* Function to get the maximum width of a binary tree*/
     int getMaxWidth(Node root)
     {
-        if(node == null)
+        if(root == null)
             return -1;
         Queue<Node> q = new LinkedList<>();
-        q.add(node);
+        q.add(root);
         int max = Integer.MIN_VALUE;
         while(q.size() > 0)
         {
@@ -37,7 +37,6 @@ class Tree
                 if(t.right != null)
                     q.add(t.right);
             }
-            level++;
         }
         return max;
     }		
