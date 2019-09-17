@@ -13,7 +13,7 @@ class GfG
             return -1;
         Queue<Node> q = new LinkedList<>();
         q.add(root);
-        int level = 0;
+        int level = 1;
         int oddSum = 0, evenSum = 0;
         while(q.size() > 0)
         {
