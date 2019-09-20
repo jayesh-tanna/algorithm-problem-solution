@@ -37,3 +37,52 @@ Node rearrange(Node head)
           }
           return head;
      }
+
+static  SLNode rearrange(SLNode head)
+        {
+            // Corner case 
+            if (head == null)
+                return null;
+
+            // Initialize first nodes of even and 
+            // odd lists 
+            SLNode odd = head;
+            SLNode even = head.Next;
+
+            // Remember the first node of even list so 
+            // that we can connect the even list at the 
+            // end of odd list. 
+            SLNode evenFirst = even;
+
+            while (1 == 1)
+            {
+                // If there are no more nodes, 
+                // then connect first node of even 
+                // list to the last node of odd list 
+                if (odd == null || even == null ||
+                                (even.Next) == null)
+                {
+                    odd.Next = evenFirst;
+                    break;
+                }
+
+                // Connecting odd nodes 
+                odd.Next = even.Next;
+                odd = even.Next;
+
+                // If there are NO more even nodes 
+                // after current odd. 
+                if (odd.Next == null)
+                {
+                    even.Next = null;
+                    odd.Next = evenFirst;
+                    break;
+                }
+
+                // Connecting even nodes 
+                even.Next = odd.Next;
+                even = odd.Next;
+            }
+            return head;
+
+        }
