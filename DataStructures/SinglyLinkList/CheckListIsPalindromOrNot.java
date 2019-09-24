@@ -23,7 +23,7 @@ class Palindrome
             stack.push(slow.data);
         while(slow != null)
         {
-            if(stack.isEmpty() || stack.pop() != slow.data)
+            if(stack.pop() != slow.data)
                 return false;
             slow = slow.next;    
         }
