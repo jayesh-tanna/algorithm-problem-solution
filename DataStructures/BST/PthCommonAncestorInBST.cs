@@ -4,37 +4,29 @@ Given a Binary Search Tree and two node values x and y present in the BST.
 Your task is to find the pth (p >= 1) common ancestor of these two nodes x and y.
 */
 
-
- public int pthAncestor(Node root, int x, int y, int p)
+//Recursion
+public int pthAncestor(Node root, int x, int y, int p)
         {
-            HashSet<int> set = new HashSet<int>();
-            InsertNodeData(root, set, x, y);
-            int count = 0;
-            foreach (var d in set)
-            {
-                if (++count == p)
-                    return d;
-            }
-            return -1;
+            if (root == null || p <= 0)
+                return -1;
+            List<int> list = new List<int>();
+            var res = findCommonAncestor(root, list, x, y);
+            if (p > list.Count || !res)
+                return -1;
+            return list[list.Count - p];
         }
-        public void InsertNodeData(Node root, HashSet<int> set, int x, int y)
+
+        public bool findCommonAncestor(Node root, List<int> list, int x, int y)
         {
-            while (root != null)
-            {
-                if (root.data > x && root.data > y)
-                {
-                    set.Add(root.data);
-                    root = root.left;
-                }
-                else if (root.data < x && root.data < y)
-                {
-                    set.Add(root.data);
-                    root = root.right;
-                }
-                else
-                {
-                    set.Add(root.data);
-                    break;
-                }
-            }
+            if (root == null)
+                return false;
+            list.Add(root.data);
+            bool lres;
+            if (root.data > x && root.data > y)
+                lres = findCommonAncestor(root.left, list, x, y);
+            else if (root.data < x && root.data < y)
+                lres = findCommonAncestor(root.right, list, x, y);
+            else
+                lres = true;
+            return lres;
         }
