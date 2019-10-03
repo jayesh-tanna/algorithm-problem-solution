@@ -22,4 +22,15 @@ class GfG
         return hasPathSumUtil(root.left,sum,pathSum) ||
         hasPathSumUtil(root.right, sum, pathSum);
     }
+    
+    //Other way
+     boolean hasPathSum(Node root, int sum)
+    {
+        if(root == null)
+            return false;
+        if(root.left == null && root.right == null && sum - root.data == 0)
+            return true;
+        sum -= root.data;
+        return hasPathSum(root.left,sum) || hasPathSum(root.right, sum);
+    }
 }
