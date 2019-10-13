@@ -33,3 +33,16 @@ class GfG
         count(node.right,util);
     }
 }
+//Post order
+class GfG
+{
+    int countLeaves(Node node) 
+    {
+        if(node == null)
+            return 0;
+        int sum = countLeaves(node.left) + countLeaves(node.right);
+        if(node.left == null && node.right == null)
+            sum++;
+        return sum;
+    }
+}
