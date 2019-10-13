@@ -30,3 +30,34 @@ class GfG
         return (root == null) ? 0 : Math.max(height(root.left),height(root.right)) + 1;
     }
 }
+
+//Without calculating height
+class GfG
+{
+    static int c;
+    boolean check(Node root)
+    {
+        c = -1;
+	    int res = checkLeaves(root,0);
+	    if(res == -1)
+	        return false;
+	       else
+	        return true;
+    }
+    int checkLeaves(Node root,int level)
+    {
+        if(root == null)
+            return 0;
+        if(root.left == null && root.right == null)
+        {
+            if(c == -1)
+                c = level;
+            if(c != level)
+                return -1;
+        }
+        int lRes = checkLeaves(root.left,level+1);
+        if(lRes != -1)
+            return checkLeaves(root.right,level+1);
+        return lRes;
+    }
+}
