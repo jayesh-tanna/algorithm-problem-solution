@@ -26,4 +26,4 @@ class GfG
         res.sum = Math.max(res.sum, ls + rs + root.data);
         return Math.max(ls,rs) + root.data;
     }
-}Max
+}
