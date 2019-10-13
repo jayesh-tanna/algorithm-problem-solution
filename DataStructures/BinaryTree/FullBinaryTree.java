@@ -18,3 +18,13 @@ boolean isFullTree(Node node)
             return true;
         return false;
     }
+
+boolean isFullTree(Node node)
+    {
+        if(node == null)
+            return true;
+        return isFullTree(node.left) 
+                        && isFullTree(node.right) 
+                        && ((node.left == null && node.right == null)
+                        || (node.left != null && node.right != null));
+    }
