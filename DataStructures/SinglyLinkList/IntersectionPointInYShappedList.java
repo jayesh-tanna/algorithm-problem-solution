@@ -22,19 +22,17 @@ class Intersect
 	        cur2 = cur2.next;
 	    }
 	    int d = Math.abs(c1-c2);
+	    cur1 = head1;
+	    cur2 = head2;
 	    if(c1 > c2)
 	    {
-	        cur1 = head1;
 	        while(d-- > 0)
 	            cur1 = cur1.next;
-	       cur2 = head2;
 	    }
 	    else if(c2 > c1)
 	    {
-	        cur2 = head2;
 	        while(d-- > 0)
 	            cur2 = cur2.next;
-	        cur1 = head1;
 	    }
 	    while(cur1 != null && cur2 != null && cur1 != cur2)
 	    {
