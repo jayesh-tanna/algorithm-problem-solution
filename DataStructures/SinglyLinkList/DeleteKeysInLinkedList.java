@@ -21,10 +21,9 @@ class GfG
                 head = cur;
             else if(prev != null && prev.next != cur)
                 prev.next = cur;
-            if(cur == null)
-                break;
             prev = cur;
-            cur = cur.next;
+            if(cur != null)
+                cur = cur.next;
         }
         return head;
     }
