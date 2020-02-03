@@ -32,3 +32,25 @@ public static bool AreAnagram(string str1, string str2)
             }
             return true;
         }
+
+public static bool AreAnagram(string str1, string str2)
+        {
+            if (string.IsNullOrWhiteSpace(str1) && string.IsNullOrWhiteSpace(str2))
+                return true;
+            if (string.IsNullOrWhiteSpace(str1) || string.IsNullOrWhiteSpace(str2))
+                return false;
+            if (str1.Length != str2.Length)
+                return false;
+            int[] arr = new int[256];
+            for (int i = 0; i < str1.Length; i++)
+            {
+                arr[str1[i]]++;
+                arr[str2[i]]--;
+            }
+            for(int i=0;i<256;i++)
+            {
+                if (arr[i] != 0)
+                    return false;
+            }
+            return true;
+        }
