@@ -41,4 +41,37 @@ class Add {
             prev.next = new Node(carry);
         return sumList;
     }
+    
+    //Other solution in c#
+    private static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+    {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        ListNode l3 = new ListNode(-1), cur = l3;
+        int a, k = 0;
+        while (l1 != null || l2 != null)
+        {
+            if (k == 1)
+                a = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + 1;
+            else
+                a = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);
+            k = 0;
+            if (a >= 10)
+            {
+                cur.val = a - 10;
+                k = 1;
+            }
+            else
+                cur.val = a;
+            l1 = l1?.next;
+            l2 = l2?.next;
+            if (l1 == null && l2 == null)
+                break;
+            cur.next = new ListNode(-1);
+            cur = cur.next;
+        }
+        if (k == 1)
+            cur.next = new ListNode(1);
+        return l3;
+    }
 }
