@@ -1,0 +1,17 @@
+[
+  {
+    "ID": 1,
+    "IsHint": false,
+    "Number": 1,
+    "Points": [
+      "10, 20"
+    ],
+    "Links": [
+      {
+        "CellId1": 30,
+        "CellId2": 40,
+        "linkLocation": "10, 20"
+      }
+    ]
+  }
+]
