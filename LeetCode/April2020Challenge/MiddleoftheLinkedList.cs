@@ -35,8 +35,6 @@ The number of nodes in the given list will be between 1 and 100.
  */
 public class Solution {
     public ListNode MiddleNode(ListNode head) {
-        if(head == null)
-            return null;
         ListNode fast = head, slow = head;
         while(fast != null && fast.next != null)
         {
