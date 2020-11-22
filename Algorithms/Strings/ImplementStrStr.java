@@ -47,4 +47,26 @@ class GfG
         }
         return -1;
     }
+ 
+ //o(n)
+ int strstr(String str, String target)
+    {
+        if(str == null || str == "")
+            return -1;
+        if(target == null || target == "")
+            return -1;
+        if(target.length() > str.length())
+            return -1;
+        int t = 0,i;
+        for(i=0;i<str.length();i++)
+        {
+            if (t == target.length())
+                break;
+            if(str.charAt(i) == target.charAt(t))
+                t++;
+            else
+                t = 0;
+        }
+        return t < target.length() ? -1 : i - t;
+    }
 }
