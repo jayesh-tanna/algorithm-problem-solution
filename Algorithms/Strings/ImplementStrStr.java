@@ -33,7 +33,7 @@ class GfG
             return -1;
         if(target.length() > str.length())
             return -1;
-        for(int i=0;i<str.length();i++)
+        for(int i=0;i<str.length()- target.length() + 1;i++)
         {
             int j = i;
             int k = 0;
