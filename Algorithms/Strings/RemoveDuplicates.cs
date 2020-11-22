@@ -29,7 +29,7 @@ public class GFG {
 	    return sb.ToString();
 	}
 }
-//Another way
+//Another way in java
 class Solution {
     String removeDups(String s) {
         if(s == null || s == "")
