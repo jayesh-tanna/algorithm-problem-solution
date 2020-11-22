@@ -1,14 +1,22 @@
 /*Reverse singly link list*/
 
 
-public static void Reverse(Node head)
+class ReverseLL
+{
+    // This function should reverse linked list and return
+    // head of the modified linked list.
+    Node reverseList(Node head)
+    {
+        if(head == null || head.next == null)
+            return head;
+        Node pre = null, next = null;
+        while(head != null)
         {
-            Node temp = null, nextNode = null;
-            while(head != null)
-            {
-                nextNode = head.Next;
-                head.Next = temp;
-                temp = head;
-                head = nextNode;
-            }
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
         }
+        return pre;
+    }
+}
