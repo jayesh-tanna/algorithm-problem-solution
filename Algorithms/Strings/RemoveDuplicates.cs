@@ -29,3 +29,22 @@ public class GFG {
 	    return sb.ToString();
 	}
 }
+//Another way
+class Solution {
+    String removeDups(String s) {
+        if(s == null || s == "")
+            return s;
+        HashSet<Character> distinctLetters = new HashSet<Character>();
+        StringBuilder builder = new StringBuilder("");
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(Character.isUpperCase(c))
+                c = Character.toLowerCase(c);
+            if(!distinctLetters.contains(s.charAt(i))){
+                distinctLetters.add(c);
+                builder.append(s.charAt(i));
+            }
+        }
+        return builder.toString();
+    }
+}
