@@ -31,6 +31,22 @@ class Solution {
     int MissingNumber(int array[], int n) {
         if(array == null || (array.length == 0 && n <= 0))
             return -1;
+        int sum = 0;
+        int totalSum = 0;
+        for(int i=0;i<n;i++)
+        {
+            totalSum += (i+1);
+            if(i < n-1)
+                sum += array[i];
+        }
+        return totalSum - sum;
+    }
+}
+
+class Solution {
+    int MissingNumber(int array[], int n) {
+        if(array == null || (array.length == 0 && n <= 0))
+            return -1;
         Arrays.sort(array);
         int idx = 1;
         for(int i=0;i<n-1;i++)
