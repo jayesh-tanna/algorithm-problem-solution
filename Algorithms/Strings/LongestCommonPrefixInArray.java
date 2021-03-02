@@ -45,9 +45,6 @@ class Solution{
         }
         if(i == 0)
             return "-1";
-        StringBuilder sb = new StringBuilder("");
-        for(int j = 0;j<i;j++) 
-            sb.append(a.charAt(j));
-        return sb.toString();
+        return a.substring(0,i);
     }
 }
